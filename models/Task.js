@@ -8,6 +8,12 @@ const taskSchema = new mongoose.Schema(
             required: true,
         },
 
+        goalId:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Goal',
+            default:null,
+        },
+
         title:{
             type:String,
             required: true,
@@ -37,7 +43,7 @@ const taskSchema = new mongoose.Schema(
             default:'pending',
         },
 
-        dueData:{
+        dueDate:{
             type:Date,
         },
 

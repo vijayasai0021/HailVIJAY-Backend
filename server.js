@@ -6,6 +6,10 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const taskRoutes = require('./routes/taskRoutes');
+const goalRoutes = require('./routes/goalRoutes');
+const dashboardRoutes = require('./routes/dashboardRoutes');
+const aiRoutes = require('./routes/aiRoutes');
+const analyticsRoutes = require('./routes/analyticsRoutes');
 
 const app = express();
 
@@ -18,6 +22,12 @@ app.use(express.json());
 //routes
 app.use('/api/auth',authRoutes);
 app.use('/api/tasks',taskRoutes);
+app.use('/api/goals',goalRoutes);
+app.use('/api/dashboard',dashboardRoutes);
+app.use('/api/ai',aiRoutes);
+app.use('/api/analytics',analyticsRoutes);
+
+
 
 app.get('/',(req,res)=>{
     res.json({
